@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #83c5be;
+    text-align: center;
+}
+
+.container {
+    height: 70vh;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+    flex-grow: 1 ;
+}
+
+.box {
+    height: 18vmin;
+    background-color: #f7ede2;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(34, 166, 176, 0.864);
+    transition: transform 0.1s;
+    font-size: 10vmin;
+    color: black;
+}
+
+.box:hover {
+    transform: scale(1.03);
+}
+
+#reset {
+    padding-left: none;
+    font-size: 3.5vmin;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 20vw;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    margin-top: none;
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 1rem;
+    align-self: center;
+}
+
+
+#restart {
+    padding-left: none;
+    font-size: 3.5vmin;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 20vw;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 1rem;
+    align-self: center;
+}
+
+#msg {
+    font-size: 30px;
+    text-align: center;
+}
+
+.msg-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+/* Modal Styles */
