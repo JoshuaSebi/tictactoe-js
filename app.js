@@ -52,14 +52,14 @@ showWin = (winner,pattern) => {
     }
 
     confetti({
-        particleCount: 1000,
+        particleCount: 400,
         spread: 70,
         origin: { y: 0.6 },
         colors: ['#FF0000', '#FFD700', '#FF6347'],
         zIndex: 9999
     });
 
-    const duration = 2 * 1000; 
+    const duration = 0.75 * 1000; 
     const end = Date.now() + duration;
 
     (function frame() {

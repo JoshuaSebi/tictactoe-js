@@ -56,10 +56,10 @@ body {
 
 #reset {
     padding-left: none;
-    font-size: 3.5vmin;
+    font-size: 30px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 13vw;
+    width: 200px;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     margin-top: 25px;
@@ -74,10 +74,10 @@ body {
 
 #restart {
     padding-left: none;
-    font-size: 3vmin;
+    font-size: 25px;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: 13vw;
+    width: 200px;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif ;
     margin-top: 10px;
