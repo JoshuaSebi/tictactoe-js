@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
+    <script class="canvas-confetti" src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <center>
-        <div class="msg-container">
-            <p id="msg">Winner</p>
-            <button id="restart">RESTART</button>
+        <div class="msgWindow">
+            <div class="msg-container">
+                <p id="msg">Winner</p>
+                <button id="restart">RESTART</button>
+            </div>
         </div>
         <div class="container">
-            <h1>TIC TAC TOE</h1>
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-size: 3rem;
+            color: #001233">TIC-TAC-TOE</h1>
             <div class="game">
                 <button class="box"></button>
                 <button class="box"></button>
@@ -25,8 +30,8 @@
                 <button class="box"></button>
                 <button class="box"></button>
             </div>
+            <button id="reset">RESET</button>
         </div>
-        <button id="reset">RESET</button>
     </center>
     <script src="app.js"></script>
 </body>

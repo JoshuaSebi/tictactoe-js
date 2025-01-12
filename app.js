@@ -1,7 +1,7 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset");
 let restartBtn = document.querySelector("#restart");
-let msgContainer = document.querySelector(".msg-container");
+let msgContainer = document.querySelector(".msgWindow");
 let msg = document.querySelector("#msg");
 //Player X, Player Y
 let turn0 = true;
@@ -30,18 +30,60 @@ inputEvt = (box) => {
     {
         box.innerText="X";
         turn0 =false;
+        box.style.color="rgb(150,0,0)";
     }
     else{
         box.innerText="O";
         turn0=true;
+        box.style.color="rgb(0, 71, 137)";
     }
     box.disabled = true;
     checkWin();         //Check if player won after each turn
 }
 
-showWin = (winner) => {
-    msg.innerText = `Winner is Player ${winner}`;
+showWin = (winner,pattern) => {
+    msg.innerHTML = `Congratulations!!!<br>Player ${winner} won.`;
     msgContainer.style.display="flex";
+
+    if (typeof confetti === "function") {
+        console.log("Confetti is ready!");
+    } else {
+        console.log("Confetti is not available.");
+    }
+
+    confetti({
+        particleCount: 1000,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FF0000', '#FFD700', '#FF6347'],
+        zIndex: 9999
+    });
+
+    const duration = 2 * 1000; 
+    const end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 4,
+            angle: 60,
+            spread: 70,
+            origin: { x: 0 },
+            colors: ['#FF0000', '#FFD700', '#FF6347'],
+            zIndex: 9999
+        });
+        confetti({
+            particleCount: 4,
+            angle: 120,
+            spread: 70,
+            origin: { x: 1 },
+            colors: ['#FF0000', '#FFD700', '#FF6347'],
+            zIndex: 9999
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
 }
 
 disableBoxes = () => {
@@ -61,6 +103,7 @@ enableBoxes = () => {
 }
 
 checkWin = () => {
+    let isdraw=true;
     for (let pattern of winPattern)
     {
         let ox1 = boxes[pattern[0]].innerText;
@@ -74,8 +117,18 @@ checkWin = () => {
                 console.log("Winner",ox1);
                 disableBoxes();
                 showWin(ox1);
+                return;
             }
         }
+        if (ox1 === "" || ox2 === "" || ox3 === "") {
+            isdraw = false;
+        }
+    }
+    if (isdraw == true)
+    {
+        msg.innerHTML = `It's a Draw!!!`;
+        msgContainer.style.display="flex";
+        box.style.color="rgb(150, 0, 0)";
     }
 };
 
